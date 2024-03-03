@@ -96,22 +96,19 @@
  * ## colors
  * ------------------------------------------------------------------- */
 :root {
-    /* color-1(#11ABB0)
-     * color-2(#F06000)
-     */
-    --color-1: hsla(182, 82%, 38%, 1);
-    --color-2: hsla(24, 100%, 47%, 1);
+    --color-1: hsla(32, 59%, 25%, 1);
+    --color-2: hsla(126, 75%, 40%, 1);
 
     /* theme color variations
      */
-    --color-1-lighter: hsla(182, 82%, 58%, 1);
-    --color-1-light  : hsla(182, 82%, 48%, 1);
-    --color-1-dark   : hsla(182, 82%, 28%, 1);
-    --color-1-darker : hsla(182, 82%, 18%, 1);
-    --color-2-lighter: hsla(24, 100%, 67%, 1);
-    --color-2-light  : hsla(24, 100%, 57%, 1);
-    --color-2-dark   : hsla(24, 100%, 37%, 1);
-    --color-2-darker : hsla(24, 100%, 27%, 1);
+    --color-1-lighter: hsla(32, 59%, 45%, 1);
+    --color-1-light  : hsla(32, 59%, 35%, 1);
+    --color-1-dark   : hsla(32, 55%, 20%, 1);
+    --color-1-darker : hsla(32, 50%, 20%, 1);
+    --color-2-lighter: hsla(126, 85%, 40%, 1);
+    --color-2-light  : hsla(126, 80%, 40%, 1);
+    --color-2-dark   : hsla(126, 75%, 25%, 1);
+    --color-2-darker : hsla(126, 65%, 25%, 1);
 
     /* feedback colors
      * color-error(#ffd1d2), color-success(#c8e675), 
@@ -3447,7 +3444,7 @@ input[type="button"].btn--primary:focus {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../images/header-bg-3000.jpg);
+    background-image: url(../images/header-background.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -3794,6 +3791,10 @@ input[type="button"].btn--primary:focus {
     border-radius: 50%;
 }
 
+.s-about__content {
+    text-align: center;
+}
+
 .s-about__content-bottom {
     margin-top: var(--vspace-2);
 }
@@ -3832,6 +3833,11 @@ input[type="button"].btn--primary:focus {
 .s-about__content-bottom .btn--download:hover svg path, 
 .s-about__content-bottom .btn--download:focus svg path {
     fill: white;
+}
+
+.s-about__content-bottom .version {
+    font-size: x-small;
+    font-style: italic;
 }
 
 /* ------------------------------------------------------------------- 
@@ -3941,6 +3947,11 @@ input[type="button"].btn--primary:focus {
     margin-right: .2rem;
 }
 
+.wk-notice {
+    font-weight: 800;
+    font-size: smaller;
+}
+
 /* ------------------------------------------------------------------- 
  * responsive:
  * resume
@@ -3988,47 +3999,9 @@ input[type="button"].btn--primary:focus {
     overflow: hidden;
 }
 
-.folio-item__thumb::before {
-    z-index: 1;
-    content: "";
-    display: block;
-    background-color: rgba(0, 0, 0, 0.8);
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-transition: all, .5s;
-    transition: all, .5s;
-}
-
-.folio-item__thumb::after {
-    z-index: 1;
-    content: "...";
-    font-family: var(--font-2);
-    font-weight: 300;
-    font-size: 3rem;
-    color: white;
-    display: block;
-    height: 32px;
-    width: 32px;
-    line-height: 32px;
-    margin-left: -16px;
-    margin-top: -16px;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
-    -webkit-transition: all, 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition: all, 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-    position: absolute;
-    left: 50%;
-    top: 50%;
+.folio-item {
+    margin: 10px;
+    position: relative;
 }
 
 .folio-item img {
@@ -4038,23 +4011,45 @@ input[type="button"].btn--primary:focus {
     transition: all, .5s;
 }
 
-/* on hover
- *---------------------------------------------- */
-.folio-item:hover .folio-item__thumb::before {
-    opacity: 1;
-    visibility: visible;
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.folio-item:hover .folio-item__thumb::after {
+.folio-item:hover .overlay {
     opacity: 1;
-    visibility: visible;
-    -webkit-transform: scale(1);
-    transform: scale(1);
 }
 
-.folio-item:hover .folio-item__thumb img {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+.overlay-text {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.overlay-description {
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.overlay-date {
+    font-size: 16px;
+    font-weight: 600;
 }
 
 /* ------------------------------------------------------------------- 
@@ -4412,6 +4407,11 @@ input[type="button"].btn--primary:focus {
 
 .s-contact__content [class*="column"]:last-child {
     margin-left: auto;
+}
+
+.contact-pic {
+    max-height: 400px;
+    border-radius: 25px;
 }
 
 /* ------------------------------------------------------------------- 
