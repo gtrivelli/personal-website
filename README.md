@@ -7,3 +7,14 @@ This repository contains the source code for my personal website.
 ## About
 
 This is my personal portfolio website showcasing my work as a Software Engineer specializing in backend development, cloud infrastructure, and DevOps.
+
+## Local Development
+
+To serve the website locally for development and testing, use python, node, php, etc.
+
+### Option 1: Python HTTP Server 
+```bash
+# Navigate to the project directory
+cd personal-website
+
+python3 -m http.server 8000
