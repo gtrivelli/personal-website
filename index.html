@@ -7,7 +7,8 @@
     ================================================== -->
     <meta charset="utf-8">
     <title>Gonzalo Trivelli</title>
-    <meta name="description" content="Personal website of Gonzalo Trivelli, a software engineer specializing in backend development and security.">
+    <meta name="description"
+        content="Personal website of Gonzalo Trivelli, a software engineer specializing in backend development and security.">
     <meta name="author" content="Gonzalo Trivelli">
 
     <!-- mobile specific metas
@@ -32,25 +33,19 @@
 
 </head>
 
-<body id="top" class="ss-preload">
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader"></div>
-    </div>
+<body id="top">
 
     <!-- header
     ================================================== -->
-    <header class="s-header">
+    <header class="s-header" id="header">
         <div class="row s-header__nav-wrap">
             <nav class="s-header__nav">
                 <ul>
                     <li><a class="smoothscroll" href="#home">Home</a></li>
                     <li><a class="smoothscroll" href="#about">About</a></li>
-                    <li><a class="smoothscroll" href="#resume">Resume</a></li>
+                    <li><a class="smoothscroll" href="#experience">Experience</a></li>
+                    <li><a class="smoothscroll" href="#education">Education</a></li>
                     <li><a class="smoothscroll" href="#portfolio">Portfolio</a></li>
-                    <li><a class="smoothscroll" href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div> <!-- end row -->
@@ -75,25 +70,13 @@
                         <a href="https://github.com/gtrivelli" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/gtrivelli/" target="_blank"><i
                                 class="fab fa-linkedin"></i></a>
+                        <a href="mailto:gtrivell136@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <div class="s-hero__scroll">
-            <a href="#about" class="s-hero__scroll-link smoothscroll">
-                <span class="scroll-arrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        style="fill:rgba(0, 0, 0, 1)">>
-                        <path
-                            d="M18.707 12.707L17.293 11.293 13 15.586 13 6 11 6 11 15.586 6.707 11.293 5.293 12.707 12 19.414z">
-                        </path>
-                    </svg>
-                </span>
-                <span class="scroll-text"></span>
-            </a>
-        </div>
     </section>
 
     <!-- about
@@ -103,20 +86,30 @@
             <div class="column large-12 s-about__content">
                 <h3>About Me</h3>
                 <p>
-                    My passion for software development started in high school, when a programming course — recommended
-                    by
-                    my brother — introduced me to the logic and creativity behind code. That early curiosity led me to
-                    pursue
-                    a degree in Computer Science at George Mason University.
+                    I'm a Product Software Engineer and Acting Tech Lead at Wolters Kluwer, specializing in API
+                    platforms,
+                    cloud architecture, and engineering leadership. I work with AWS, CI/CD automation, and applications
+                    that support
+                    100,000+ users across our platform.
                 </p>
                 <p>
-                    After graduating, I briefly co-led a startup project before the pandemic shut it down. From there, I
-                    began
-                    my professional journey at Misbar, then joined NurseTim, where I became a core contributor across
-                    backend
-                    systems. Following its acquisition, I transitioned to Wolters Kluwer, where I now focus on building
-                    secure,
-                    distributed systems, mentoring junior engineers, and continuously expanding my technical depth.
+                    I'm particularly interested in applying AI to make systems and workflows more efficient. I built
+                    AutoDiff,
+                    an AI-driven code analysis tool, and lead AI security initiatives across 20+ engineering teams to
+                    improve
+                    both performance and resilience.
+                </p>
+                <p>
+                    My fascination with the depth of tech complexity sparked my interest in software, and that curiosity
+                    has grown
+                    into a career focused on building secure, scalable, and innovative solutions. I value collaborative
+                    development,
+                    enjoy mentoring junior engineers, and focus on guiding teams toward smarter outcomes.
+                </p>
+                <p>
+                    Currently, I'm deepening my expertise in AI-enabled systems and optimization while continuing to
+                    grow as a
+                    technical leader with the skills to drive engineering teams forward.
                 </p>
                 <hr>
 
@@ -131,7 +124,7 @@
                             Download CV
                         </a>
                         <div class="version">
-                            Last updated: August 1, 2025
+                            Last updated: September 7, 2025
                         </div>
                     </div>
                 </div>
@@ -141,13 +134,18 @@
 
     <!-- resume
     ================================================== -->
-    <section id="resume" class="s-resume target-section">
+    <!-- experience
+    ================================================== -->
+    <section id="experience" class="s-resume target-section">
 
-        <div class="row s-resume__section">
-            <div class="column large-3 tab-12">
-                <h3 class="section-header-allcaps">Career</h3>
+        <div class="row s-resume__header">
+            <div class="column large-12">
+                <h3>Experience</h3>
             </div>
-            <div class="column large-9 tab-12">
+        </div>
+
+        <div class="row">
+            <div class="column large-12">
                 <div class="resume-block">
 
                     <div class="resume-block__header">
@@ -165,34 +163,26 @@
                         </p>
                     </div>
 
+                    <div class="tech-tags">
+                        <span class="tech-tag tech-tag--ai">AI</span>
+                        <span class="tech-tag tech-tag--aws">AWS</span>
+                        <span class="tech-tag tech-tag--php">PHP</span>
+                        <span class="tech-tag tech-tag--typescript">TypeScript</span>
+                        <span class="tech-tag tech-tag--ci-cd">CI/CD</span>
+                        <span class="tech-tag tech-tag--security">Security</span>
+                        <span class="tech-tag tech-tag--leadership">Leadership</span>
+                        <span class="tech-tag tech-tag--devops">DevOps</span>
+                    </div>
+
                     <ul>
                         <li>
-                            Directed engineering efforts, release planning, and stakeholder communication across
-                            multiple
-                            teams
+                             Drove cross-team engineering and AI security standards for 20+ teams.
                         </li>
                         <li>
-                            Led AI Security subgroup, defining secure coding standards in development using AI for 20+
-                            engineering teams
+                            Built scalable, secure systems: CI/CD pipelines, AWS migrations, and APIs for 100k+ users.
                         </li>
                         <li>
-                            Built and maintained CI/CD pipelines with automated security scans (SonarQube, Coverity),
-                            fixing
-                            hundreds of critical issues across applications
-                        </li>
-                        <li>
-                            Migrated team-owned applications to AWS with near-zero downtime, improving scalability and
-                            reducing infrastructure costs
-                        </li>
-                        <li>
-                            Developed JWT authenticated REST APIs to onboard 100k+ users into new SaaS platform
-                        </li>
-                        <li>
-                            Mentored 3 junior engineers, improving velocity and output quality
-                        </li>
-                        <li>
-                            Participated in quarterly planning, disaster recovery assessments, and companywide tech
-                            standards discussions
+                            Boosted team performance through mentoring, planning, and resilience initiatives.
                         </li>
                     </ul>
                 </div>
@@ -208,19 +198,25 @@
                         </p>
                     </div>
 
+                    <div class="tech-tags">
+                        <span class="tech-tag tech-tag--aws">AWS</span>
+                        <span class="tech-tag tech-tag--php">PHP</span>
+                        <span class="tech-tag tech-tag--laravel">Laravel</span>
+                        <span class="tech-tag tech-tag--javascript">JavaScript</span>
+                        <span class="tech-tag tech-tag--mysql">MySQL</span>
+                        <span class="tech-tag tech-tag--shopify">Shopify</span>
+                    </div>
+
                     <ul>
                         <li>
-                            Developed a batch process on AWS (RDS, Lambda, DynamoDB, S3, IAM) to sync data nightly
-                            for the company's largest client
+                            Built AWS batch processes and automated Shopify-QuickBooks integrations, 
+                            eliminating manual workflows.
                         </li>
                         <li>
-                            Automated Shopify-QuickBooks integrations, eliminating manual processes
+                            Rebuilt Shopify storefront to improve UX and boost conversions.
                         </li>
                         <li>
-                            Rebuilt storefront with Shopify, improving UX and increasing conversion rates
-                        </li>
-                        <li>
-                            Migrated legacy PHP system to Laravel (MVC), reducing code complexity and technical debt
+                            Migrated legacy PHP system to Laravel, reducing complexity and technical debt.
                         </li>
                     </ul>
                 </div>
@@ -236,26 +232,42 @@
                         </p>
                     </div>
 
+                    <div class="tech-tags">
+                        <span class="tech-tag tech-tag--php">PHP</span>
+                        <span class="tech-tag tech-tag--laravel">Laravel</span>
+                        <span class="tech-tag tech-tag--javascript">JavaScript</span>
+                        <span class="tech-tag tech-tag--mysql">MySQL</span>
+                    </div>
+
                     <ul>
                         <li>
-                            Reduced page load time by 25% via optimized caching strategies
+                            Reduced page load time by 25% via optimized caching strategies.
                         </li>
                         <li>
-                            Built modular backend components (profanity filter, Livewire modal manager, structured APIs)
+                            Built modular backend components (profanity filter, Livewire modal manager, structured APIs).
                         </li>
                         <li>
-                            Contributed backend services to support large-scale front-end redesign
+                            Contributed backend services to support large-scale front-end redesign.
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="row s-resume__section">
-            <div class="column large-3 tab-12">
-                <h3 class="section-header-allcaps">Education</h3>
+    </section>
+
+    <!-- education
+    ================================================== -->
+    <section id="education" class="s-resume target-section">
+
+        <div class="row s-resume__header">
+            <div class="column large-12">
+                <h3>Education</h3>
             </div>
-            <div class="column large-9 tab-12">
+        </div>
+
+        <div class="row">
+            <div class="column large-12">
                 <div class="resume-block">
                     <div class="resume-block__header">
                         <h4 class="h3">George Mason University</h4>
@@ -322,7 +334,8 @@
                                 July 2025
                             </div>
                             <div class="overlay-description">
-                                Python CLI tool that uses AI to performs automated security, accessibility, and performance analysis
+                                Python CLI tool that uses AI to performs automated security, accessibility, and
+                                performance analysis
                             </div>
                         </div>
                     </div>
@@ -339,7 +352,8 @@
                                 July 2025
                             </div>
                             <div class="overlay-description">
-                                A collection of applied machine learning projects showcasing various techniques and methodologies.
+                                A collection of applied machine learning projects showcasing various techniques and
+                                methodologies.
                             </div>
                         </div>
                     </div>
@@ -452,58 +466,6 @@
 
     </section> <!-- end s-portfolio -->
 
-    <!-- contact
-    ================================================== -->
-    <section id="contact" class="s-contact target-section">
-
-        <div class="row s-contact__header">
-            <div class="column large-12">
-                <h3 class="section-header-allcaps">Contact</h3>
-            </div>
-        </div>
-
-        <div class="row s-contact__content">
-
-            <div class="column large-7 medium-12">
-
-                <h4 class="huge-text">
-                    Get in touch!
-                </h4>
-
-                <img class="contact-pic" src="images/contact-image.JPG" alt="">
-            </div>
-
-            <div class="column large-4 medium-12">
-
-                <div class="row contact-infos">
-                    <div class="column large-12 medium-6 tab-12">
-                        <div class="contact-block">
-                            <h5 class="contact-block__header">
-                                Email
-                            </h5>
-                            <p class="contact-block__content">
-                                <a class="mailtoui" href="mailto:gtrivell136@gmail.com">gtrivell136@gmail.com</a>
-                            </p>
-                        </div> <!-- end contact-block -->
-                    </div>
-                    <div class="column large-12 medium-6 tab-12">
-                        <div class="contact-block">
-                            <h5 class="contact-block__header">
-                                Phone
-                            </h5>
-                            <p class="contact-block__content">
-                                <a href="tel:+7034248193">703 424 8193</a>
-                            </p>
-                        </div> <!-- end contact-block -->
-                    </div>
-                </div> <!-- end contact-infos -->
-
-            </div>
-        </div> <!-- s-contact__content -->
-
-    </section> <!-- end s-contact -->
-
-
     <!-- footer
     ================================================== -->
     <footer class="s-footer">
@@ -514,23 +476,19 @@
                                 aria-hidden="true"></i></a></li>
                     <li><a href="https://www.linkedin.com/in/gtrivelli/" target="_blank"><i class="fab fa-linkedin-in"
                                 aria-hidden="true"></i></a></li>
+                    <li><a href="mailto:gtrivell136@gmail.com" target="_blank"><i class="fas fa-envelope"
+                                aria-hidden="true"></i></a></li>
                 </ul>
             </div>
 
             <div class="column large-7 medium-6 w-1000-stack ss-copyright">
                 <span>2025 @ Gonzalo Trivelli</span>
-                <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                <span>Design by StyleShout</span>
             </div>
         </div>
 
-        <div class="ss-go-top">
-            <a class="smoothscroll" title="Back to Top" href="#top">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z" />
-                </svg>
-            </a>
-        </div> <!-- end ss-go-top -->
     </footer>
+
 
     <!-- Java Script
     ================================================== -->

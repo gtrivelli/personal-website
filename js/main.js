@@ -52,10 +52,12 @@
     const ssMoveHeader = function () {
 
         const hdr = document.querySelector('.s-header');
-        const hero = document.querySelector('#hero');
+        const hero = document.querySelector('#home');
         let triggerHeight;
 
-        if (!(hdr && hero)) return;
+        if (!(hdr && hero)) {
+            return;
+        }
 
         setTimeout(function(){
             triggerHeight = hero.offsetHeight - 170;
@@ -65,23 +67,11 @@
 
             let loc = window.scrollY;
            
-
-            if (loc > triggerHeight) {
-                hdr.classList.add('sticky');
+            // Add scrolled class for frosted glass effect
+            if (loc > 50) {
+                hdr.classList.add('scrolled');
             } else {
-                hdr.classList.remove('sticky');
-            }
-
-            if (loc > triggerHeight + 20) {
-                hdr.classList.add('offset');
-            } else {
-                hdr.classList.remove('offset');
-            }
-
-            if (loc > triggerHeight + 150) {
-                hdr.classList.add('scrolling');
-            } else {
-                hdr.classList.remove('scrolling');
+                hdr.classList.remove('scrolled');
             }
 
         });
@@ -141,26 +131,51 @@
         
             // Get current scroll position
             let scrollY = window.pageYOffset;
+            let currentSectionId = null;
+            let maxVisibleArea = 0;
+            const viewportHeight = window.innerHeight;
+            const headerOffset = 150;
         
-            // Loop through sections to get height(including padding and border), 
-            // top and ID values for each
-            sections.forEach(function(current) {
-                const sectionHeight = current.offsetHeight;
-                const sectionTop = current.offsetTop - 50;
-                const sectionId = current.getAttribute("id");
-            
-               /* If our current scroll position enters the space where current section 
-                * on screen is, add .current class to parent element(li) of the thecorresponding 
-                * navigation link, else remove it. To know which link is active, we use 
-                * sectionId variable we are getting while looping through sections as 
-                * an selector
-                */
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    document.querySelector(".s-header__nav a[href*=" + sectionId + "]").parentNode.classList.add("current");
-                } else {
-                    document.querySelector(".s-header__nav a[href*=" + sectionId + "]").parentNode.classList.remove("current");
+            // First, remove all current classes
+            sections.forEach(function(section) {
+                const sectionId = section.getAttribute("id");
+                const navLink = document.querySelector(".s-header__nav a[href*=" + sectionId + "]");
+                if (navLink) {
+                    navLink.parentNode.classList.remove("current");
                 }
             });
+        
+            // Find the section with the most visible area
+            sections.forEach(function(section) {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionBottom = sectionTop + sectionHeight;
+                const sectionId = section.getAttribute("id");
+                
+                // Calculate how much of this section is visible in the viewport
+                const visibleTop = Math.max(scrollY + headerOffset, sectionTop);
+                const visibleBottom = Math.min(scrollY + viewportHeight, sectionBottom);
+                const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+                
+                // Only consider sections that have meaningful visibility
+                if (visibleHeight > 100 && visibleHeight > maxVisibleArea) {
+                    maxVisibleArea = visibleHeight;
+                    currentSectionId = sectionId;
+                }
+            });
+            
+            // If no section was found, default to the first section (home)
+            if (!currentSectionId && sections.length > 0) {
+                currentSectionId = sections[0].getAttribute("id");
+            }
+            
+            // Highlight the current section
+            if (currentSectionId) {
+                const navLink = document.querySelector(".s-header__nav a[href*=" + currentSectionId + "]");
+                if (navLink) {
+                    navLink.parentNode.classList.add("current");
+                }
+            }
         }
 
     }; // end ssScrollSpy
@@ -203,28 +218,38 @@
 
         folioLinks.forEach(function(link) {
             let modalbox = link.getAttribute('href');
-            let instance = basicLightbox.create(
-                document.querySelector(modalbox),
-                {
-                    onShow: function(instance) {
-                        //detect Escape key press
-                        document.addEventListener("keydown", function(evt) {
-                            evt = evt || window.event;
-                            if(evt.keyCode === 27){
-                            instance.close();
-                            }
-                        });
+            // Only create lightbox for modal selectors (starting with #), skip external URLs
+            if (modalbox && modalbox.startsWith('#')) {
+                let instance = basicLightbox.create(
+                    document.querySelector(modalbox),
+                    {
+                        onShow: function(instance) {
+                            //detect Escape key press
+                            document.addEventListener("keydown", function(evt) {
+                                evt = evt || window.event;
+                                if(evt.keyCode === 27){
+                                instance.close();
+                                }
+                            });
+                        }
                     }
-                }
-            )
-            modals.push(instance);
+                )
+                modals.push(instance);
+            }
         });
 
-        folioLinks.forEach(function(link, index) {
-            link.addEventListener("click", function(e) {
-                e.preventDefault();
-                modals[index].show();
-            });
+        // Only add click handlers for modal links
+        let modalIndex = 0;
+        folioLinks.forEach(function(link) {
+            let modalbox = link.getAttribute('href');
+            if (modalbox && modalbox.startsWith('#')) {
+                let currentIndex = modalIndex;
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    modals[currentIndex].show();
+                });
+                modalIndex++;
+            }
         });
 
     };  // end ssLightbox
@@ -259,13 +284,37 @@
     const ssSmoothScroll = function () {
         
         const triggers = document.querySelectorAll(".smoothscroll");
+        let currentJump = null; // Track current animation
 
         triggers.forEach(function(trigger) {
-            trigger.addEventListener("click", function() {
+            trigger.addEventListener("click", function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                
                 const target = trigger.getAttribute("href");
+                const targetElement = document.querySelector(target);
+                
+                if (!targetElement) return;
+                
+                // Check if we're already at or very close to the target section
+                const targetTop = targetElement.offsetTop;
+                const currentScroll = window.scrollY;
+                const threshold = 100; // Allow 100px tolerance
+                
+                if (Math.abs(currentScroll - targetTop) < threshold) {
+                    return; // Don't scroll if already at target
+                }
+                
+                // Cancel any existing animation
+                if (currentJump && currentJump.stop) {
+                    currentJump.stop();
+                }
 
-                Jump(target, {
+                // Start new animation and store reference
+                currentJump = Jump(target, {
                     duration: 1200,
+                    callback: function() {
+                        currentJump = null; // Clear reference when done
+                    }
                 });
             });
         });
@@ -273,35 +322,27 @@
     }; // end ssSmoothScroll
 
 
-   /* back to top
+
+   /* Hero fade in
     * ------------------------------------------------------ */
-    const ssBackToTop = function() {
-
-        const pxShow = 900;
-        const goTopButton = document.querySelector(".ss-go-top");
-
-        if (!goTopButton) return;
-
-        // Show or hide the button
-        if (window.scrollY >= pxShow) goTopButton.classList.add("link-is-visible");
-
-        window.addEventListener('scroll', function() {
-            if (window.scrollY >= pxShow) {
-                if(!goTopButton.classList.contains('link-is-visible')) goTopButton.classList.add("link-is-visible")
-            } else {
-                goTopButton.classList.remove("link-is-visible")
+    const heroFadeIn = function() {
+        console.log('heroFadeIn called');
+        const heroContent = document.querySelector('.s-hero__content');
+        console.log('heroContent element:', heroContent);
+        
+        setTimeout(function() {
+            if (heroContent) {
+                console.log('Adding fade-in class');
+                heroContent.classList.add('fade-in');
+                console.log('Classes after adding:', heroContent.className);
             }
-        });
-
-    }; // end ssBackToTop
-
-
+        }, 200);
+    };
 
    /* initialize
     * ------------------------------------------------------ */
     (function ssInit() {
 
-        ssPreloader();
         ssParallax();
         ssMoveHeader();
         ssMobileMenu();
@@ -310,7 +351,7 @@
         ssLightbox();
         ssAlertBoxes();
         ssSmoothScroll();
-        ssBackToTop();
+        heroFadeIn();
 
     })();
 
