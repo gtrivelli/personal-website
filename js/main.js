@@ -290,6 +290,9 @@
             trigger.addEventListener("click", function(e) {
                 e.preventDefault(); // Prevent default anchor behavior
                 
+                // Remove focus from the clicked element to prevent persistent highlight
+                trigger.blur();
+                
                 const target = trigger.getAttribute("href");
                 const targetElement = document.querySelector(target);
                 

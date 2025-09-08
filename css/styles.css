@@ -3393,11 +3393,14 @@ button.btn--pill {
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.s-header__nav a:hover,
-.s-header__nav a:focus {
+.s-header__nav a:hover {
     color: var(--color-1);
     background: rgba(59, 130, 246, 0.1);
     transform: translateY(-1px);
+}
+
+.s-header__nav a:focus {
+    outline: none;
 }
 
 .s-header__nav .current a {
