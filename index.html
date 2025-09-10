@@ -64,7 +64,7 @@
                 <img class="s-about__pic" src="images/avatars/user-06.jpg" alt="">
                 <div class="s-hero__content-about">
                     <h1>Gonzalo Trivelli</h1>
-                    <h3>Software Engineer - Backend | Cloud | DevOps</h3>
+                    <h3>Software Engineer - Backend | Cloud | AI-Enabled Systems</h3>
 
                     <div class="s-hero__content-social">
                         <a href="https://github.com/gtrivelli" target="_blank"><i class="fab fa-github"></i></a>
@@ -84,7 +84,11 @@
     <section id="about" class="s-about target-section">
         <div class="row">
             <div class="column large-12 s-about__content">
-                <h3>About Me</h3>
+                <div class="row s-resume__header">
+                    <div class="column large-12">
+                        <h3>About Me</h3>
+                    </div>
+                </div>
                 <p>
                     I'm a Product Software Engineer and Acting Tech Lead at Wolters Kluwer, specializing in API
                     platforms,
@@ -168,10 +172,10 @@
                         <span class="tech-tag tech-tag--aws">AWS</span>
                         <span class="tech-tag tech-tag--php">PHP</span>
                         <span class="tech-tag tech-tag--typescript">TypeScript</span>
+                        <span class="tech-tag tech-tag--mysql">MySQL</span>
+                        <span class="tech-tag tech-tag--docker">Docker</span>
                         <span class="tech-tag tech-tag--ci-cd">CI/CD</span>
-                        <span class="tech-tag tech-tag--security">Security</span>
                         <span class="tech-tag tech-tag--leadership">Leadership</span>
-                        <span class="tech-tag tech-tag--devops">DevOps</span>
                     </div>
 
                     <ul>
@@ -270,25 +274,35 @@
             <div class="column large-12">
                 <div class="resume-block">
                     <div class="resume-block__header">
-                        <h4 class="h3">George Mason University</h4>
-                        <p class="resume-block__header-meta">
-                            <span>B.S. in Computer Science</span>
-                            <span class="resume-block__header-date">
-                                December 2019
-                            </span>
-                        </p>
+                        <div class="resume-block__header-content">
+                            <img src="images/logos/gmu-logo.svg" alt="GMU Logo" class="education-logo">
+                            <div class="resume-block__header-text">
+                                <h4 class="h3">George Mason University</h4>
+                                <p class="resume-block__header-meta">
+                                    <span>B.S. in Computer Science</span>
+                                    <span class="resume-block__header-date">
+                                        December 2019
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="resume-block">
                     <div class="resume-block__header">
-                        <h4 class="h3">Coursera</h4>
-                        <p class="resume-block__header-meta">
-                            <span>AWS Cloud Technical Essentials</span>
-                            <span class="resume-block__header-date">
-                                March 2023
-                            </span>
-                        </p>
+                        <div class="resume-block__header-content">
+                            <img src="images/logos/coursera-logo.svg" alt="Coursera Logo" class="education-logo">
+                            <div class="resume-block__header-text">
+                                <h4 class="h3">Coursera</h4>
+                                <p class="resume-block__header-meta">
+                                    <span>AWS Cloud Technical Essentials</span>
+                                    <span class="resume-block__header-date">
+                                        March 2023
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -305,164 +319,218 @@
             </div>
         </div>
 
-        <div class="row collapse block-large-1-5 block-tab-1-2 block-500-stack folio-list">
+        <div class="row portfolio-grid">
 
-            <div class="column folio-item ">
-                <a href="https://github.com/gtrivelli/autodiff-extension" target="_blank" class="folio-item__thumb">
-                    <img src="images/portfolio/autodiff-extension.png" alt="">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            AutoDiff Extension
-                            <div class="overlay-date">
-                                July 2025
+            <div class="column portfolio-card">
+                <a href="https://github.com/gtrivelli/autodiff-extension" target="_blank" class="portfolio-link">
+                    <div class="portfolio-card__content">
+                        <div class="portfolio-card__image">
+                            <img src="images/portfolio/autodiff-extension.png" alt="AutoDiff Extension">
+                        </div>
+                        <div class="portfolio-card__info">
+                            <div class="portfolio-card__header">
+                                <h4>AutoDiff Extension</h4>
+                                <span class="portfolio-card__date">July 2025</span>
                             </div>
-                            <div class="overlay-description">
+                            <p class="portfolio-card__description">
                                 VS Code extension built on top of AutoDiff to analyze code diffs in real-time
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag tech-tag--typescript">TypeScript</span>
                             </div>
                         </div>
                     </div>
                 </a>
-            </div> <!-- end folio-item -->
+            </div>
 
-            <div class="column folio-item ">
-                <a href="https://github.com/gtrivelli/autodiff" target="_blank" class="folio-item__thumb">
-                    <img src="images/portfolio/autodiff.png" alt="">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            AutoDiff
-                            <div class="overlay-date">
-                                July 2025
+            <div class="column portfolio-card">
+                <a href="https://github.com/gtrivelli/autodiff" target="_blank" class="portfolio-link">
+                    <div class="portfolio-card__content">
+                        <div class="portfolio-card__image">
+                            <img src="images/portfolio/autodiff.png" alt="AutoDiff">
+                        </div>
+                        <div class="portfolio-card__info">
+                            <div class="portfolio-card__header">
+                                <h4>AutoDiff</h4>
+                                <span class="portfolio-card__date">July 2025</span>
                             </div>
-                            <div class="overlay-description">
-                                Python CLI tool that uses AI to performs automated security, accessibility, and
-                                performance analysis
+                            <p class="portfolio-card__description">
+                                Python CLI tool that uses AI to perform automated security, accessibility, and performance analysis
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag tech-tag--ai">AI</span>
+                                <span class="tech-tag tech-tag--python">Python</span>
                             </div>
                         </div>
                     </div>
                 </a>
-            </div> <!-- end folio-item -->
+            </div>
 
-            <div class="column folio-item ">
-                <a href="https://github.com/gtrivelli/applied-ml-projects" target="_blank" class="folio-item__thumb">
-                    <img src="images/portfolio/generic-project.png" alt="">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Applied ML Projects
-                            <div class="overlay-date">
-                                July 2025
+            <div class="column portfolio-card">
+                <a href="https://github.com/gtrivelli/dish-manager" target="_blank" class="portfolio-link">
+                    <div class="portfolio-card__content">
+                        <div class="portfolio-card__image">
+                            <img src="images/portfolio/dish-manager.png" alt="Dish Manager">
+                        </div>
+                        <div class="portfolio-card__info">
+                            <div class="portfolio-card__header">
+                                <h4>Dish Manager</h4>
+                                <span class="portfolio-card__date">February 2025</span>
                             </div>
-                            <div class="overlay-description">
-                                A collection of applied machine learning projects showcasing various techniques and
-                                methodologies.
+                            <p class="portfolio-card__description">
+                                A recipe management and organization tool for storing and organizing culinary recipes
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag tech-tag--python">Python</span>
                             </div>
                         </div>
                     </div>
                 </a>
-            </div> <!-- end folio-item -->
+            </div>
 
-            <div class="column folio-item ">
-                <a href="https://github.com/gtrivelli/dish-manager" target="_blank" class="folio-item__thumb">
-                    <img src="images/portfolio/dish-manager.png" alt="">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Dish Manager
-                            <div class="overlay-date">
-                                February 2025
+            <div class="column portfolio-card">
+                <a href="https://github.com/gtrivelli/personal-website" target="_blank" class="portfolio-link">
+                    <div class="portfolio-card__content">
+                        <div class="portfolio-card__image">
+                            <img src="images/portfolio/personal-website.png" alt="Personal Website">
+                        </div>
+                        <div class="portfolio-card__info">
+                            <div class="portfolio-card__header">
+                                <h4>Personal Website</h4>
+                                <span class="portfolio-card__date">March 2024</span>
                             </div>
-                            <div class="overlay-description">
-                                A recipe management and organization tool. Made using Python.
+                            <p class="portfolio-card__description">
+                                Online resume detailing my professional history with modern design and responsive layout
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag tech-tag--generic">HTML</span>
+                                <span class="tech-tag tech-tag--generic">CSS</span>
+                                <span class="tech-tag tech-tag--javascript">JavaScript</span>
                             </div>
                         </div>
                     </div>
                 </a>
-            </div> <!-- end folio-item -->
+            </div>
 
-            <div class="column folio-item ">
-                <a href="https://github.com/gtrivelli/personal-website" target="_blank" class="folio-item__thumb">
-                    <img src="images/portfolio/personal-website.png" alt="">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Personal Website
-                            <div class="overlay-date">
-                                March 2024
+            <div class="column portfolio-card">
+                <a href="https://github.com/gtrivelli/ai-text-game" target="_blank" class="portfolio-link">
+                    <div class="portfolio-card__content">
+                        <div class="portfolio-card__image">
+                            <img src="images/portfolio/ai-text-game.png" alt="AI Text Game">
+                        </div>
+                        <div class="portfolio-card__info">
+                            <div class="portfolio-card__header">
+                                <h4>Generative AI Text Game</h4>
+                                <span class="portfolio-card__date">April 2024</span>
                             </div>
-                            <div class="overlay-description">
-                                Online resume detailing my professional history. Made using basic HTML, CSS, and JS.
+                            <p class="portfolio-card__description">
+                                Interactive text-based adventure game powered by Google's Gemini AI model
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag tech-tag--ai">AI</span>
+                                <span class="tech-tag tech-tag--python">Python</span>
+                                <span class="tech-tag tech-tag--generic">CLI</span>
                             </div>
                         </div>
                     </div>
                 </a>
-            </div> <!-- end folio-item -->
+            </div>
 
-            <div class="column folio-item ">
-                <a href="https://github.com/gtrivelli/ai-text-game" target="_blank" class="folio-item__thumb">
-                    <img src="images/portfolio/ai-text-game.png" alt="">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Generative AI Text Game
-                            <div class="overlay-date">
-                                April 2024
+            <div class="column portfolio-card">
+                <a href="https://github.com/gtrivelli/optom-web-app" target="_blank" class="portfolio-link">
+                    <div class="portfolio-card__content">
+                        <div class="portfolio-card__image">
+                            <img src="images/portfolio/generic-project.png" alt="Optometry Web App">
+                        </div>
+                        <div class="portfolio-card__info">
+                            <div class="portfolio-card__header">
+                                <h4>Optometry Web Application</h4>
+                                <span class="portfolio-card__date">January 2024</span>
                             </div>
-                            <div class="overlay-description">
-                                Text based game utilizing Google's Gemini model. Made using Python.
+                            <p class="portfolio-card__description">
+                                Full-stack optometry office management system with patient records and appointment scheduling
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag tech-tag--python">Python</span>
+                                <span class="tech-tag tech-tag--docker">Docker</span>
+                                <span class="tech-tag tech-tag--generic">Django</span>
+                                <span class="tech-tag tech-tag--generic">PostgreSQL</span>
                             </div>
                         </div>
                     </div>
                 </a>
-            </div> <!-- end folio-item -->
+            </div>
 
-            <div class="column folio-item ">
-                <a href="https://github.com/gtrivelli/optom-web-app" target="_blank" class="folio-item__thumb">
-                    <img src="images/portfolio/generic-project.png" alt="">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Optometry Web Application
-                            <div class="overlay-date">
-                                January 2024
+            <div class="column portfolio-card">
+                <a href="https://github.com/gtrivelli/search-tool" target="_blank" class="portfolio-link">
+                    <div class="portfolio-card__content">
+                        <div class="portfolio-card__image">
+                            <img src="images/portfolio/search-tool.png" alt="CLI Search Tool">
+                        </div>
+                        <div class="portfolio-card__info">
+                            <div class="portfolio-card__header">
+                                <h4>CLI Search Tool</h4>
+                                <span class="portfolio-card__date">October 2024</span>
                             </div>
-                            <div class="overlay-description">
-                                An optometry office management application started as a technical exercise.
-                                Made using Docker, Django, and Postgres.
+                            <p class="portfolio-card__description">
+                                High-performance command-line file search utility with advanced filtering capabilities
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag tech-tag--generic">Rust</span>
+                                <span class="tech-tag tech-tag--generic">CLI</span>
                             </div>
                         </div>
                     </div>
                 </a>
-            </div> <!-- end folio-item -->
+            </div>
 
-            <div class="column folio-item ">
-                <a href="https://github.com/gtrivelli/2019-Kaggle" target="_blank" class="folio-item__thumb">
-                    <img src="images/portfolio/generic-project.png" alt="">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Kaggle Data Science Bowl
-                            <div class="overlay-date">
-                                December 2019
+            <div class="column portfolio-card">
+                <a href="https://github.com/gtrivelli/applied-ml-projects" target="_blank" class="portfolio-link">
+                    <div class="portfolio-card__content">
+                        <div class="portfolio-card__image">
+                            <img src="images/portfolio/generic-project.png" alt="Applied ML Projects">
+                        </div>
+                        <div class="portfolio-card__info">
+                            <div class="portfolio-card__header">
+                                <h4>Applied ML Projects</h4>
+                                <span class="portfolio-card__date">December 2019</span>
                             </div>
-                            <div class="overlay-description">
-                                Final project for Data Mining course. Made using Python, numpy, and pandas.
+                            <p class="portfolio-card__description">
+                                A collection of applied machine learning projects showcasing various techniques and methodologies
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag tech-tag--python">Python</span>
+                                <span class="tech-tag tech-tag--generic">Machine Learning</span>
+                                <span class="tech-tag tech-tag--generic">NumPy</span>
+                                <span class="tech-tag tech-tag--generic">Pandas</span>
                             </div>
                         </div>
                     </div>
                 </a>
-            </div> <!-- end folio-item -->
+            </div>
 
-            <div class="column folio-item ">
-                <a href="https://github.com/gtrivelli/search-tool" target="_blank" class="folio-item__thumb">
-                    <img src="images/portfolio/search-tool.png" alt="">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            CLI Search Tool
-                            <div class="overlay-date">
-                                October 2024
+            <div class="column portfolio-card">
+                <a href="https://github.com/gtrivelli/2019-Kaggle" target="_blank" class="portfolio-link">
+                    <div class="portfolio-card__content">
+                        <div class="portfolio-card__image">
+                            <img src="images/portfolio/generic-project.png" alt="Kaggle Data Science Bowl">
+                        </div>
+                        <div class="portfolio-card__info">
+                            <div class="portfolio-card__header">
+                                <h4>Kaggle Data Science Bowl</h4>
+                                <span class="portfolio-card__date">December 2019</span>
                             </div>
-                            <div class="overlay-description">
-                                CLI file search tool. Made using Rust.
+                            <p class="portfolio-card__description">
+                                Data mining and machine learning competition project analyzing educational game data
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag tech-tag--python">Python</span>
                             </div>
                         </div>
                     </div>
                 </a>
-            </div> <!-- end folio-item -->
-        </div> <!-- end folio-list -->
+            </div>
+        </div> <!-- end portfolio-grid -->
 
     </section> <!-- end s-portfolio -->
 
